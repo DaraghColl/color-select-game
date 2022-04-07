@@ -2,7 +2,7 @@ import './style.css';
 
 // selectors
 const app = document.querySelector('#app');
-const scoreUI = document.querySelector('#score');
+const scoreUI = document.querySelector('#score')!;
 const currentColorUI: HTMLElement = document.querySelector('#current-color')!;
 const startButton = document.querySelector('#start-game');
 
@@ -46,14 +46,16 @@ const createBall = () => {
   ball.addEventListener('click', () => {
     if (ballColor === currentColor) {
       score += 1;
-      if (scoreUI) {
-        ball.classList.add('ball-selected');
 
-        scoreUI.innerHTML = score.toString();
-      }
+      ball.classList.add('ball-selected');
+      scoreUI.innerHTML = score.toString();
+
+      checkScore();
     } else {
-      score -= 1;
-      if (scoreUI) scoreUI.innerHTML = score.toString();
+      if (score !== 0) score -= 1;
+
+      ball.style.backgroundColor = '#000';
+      scoreUI.innerHTML = score.toString();
     }
   });
 };
@@ -61,6 +63,11 @@ const createBall = () => {
 const selectCurrentColor = () => {
   currentColor = balls[Math.floor(Math.random() * balls.length)];
   currentColorUI.style.backgroundColor = currentColor;
+};
+
+const checkScore = () => {
+  if (score === 3) {
+  }
 };
 
 const startGame = () => {
@@ -80,5 +87,3 @@ startButton?.addEventListener('click', () => {
     startGame();
   }, 1000);
 });
-
-// startGame();
