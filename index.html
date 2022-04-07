@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <svg height="100" width="100">
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          stroke="black"
+          stroke-width="3"
+          fill="red"
+        />
+      </svg> -->
+      <div class="game-menu">
+        <button class="game-menu__start" id="start-game">Start Game</button>
+      </div>
+      <div class="stats">
+        <div class="current-color">
+          <h3>Current Color</h3>
+          <div class="color" id="current-color"></div>
+        </div>
+
+        <div class="score">
+          <h3>Score</h3>
+          <div class="color" id="score">0</div>
+        </div>
+        <button>Stop</button>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
