@@ -17,6 +17,23 @@ body {
   background-color: #2e3440;
 }
 
+.container {
+  height: 72vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.player {
+  position: relative;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  background: black;
+  border-radius: 10px;
+  transition: top 5s ease-out;
+  transition: 0.2s;
+}
 /** GAME MENU **/
 .game-menu__start {
   padding: 2rem;
